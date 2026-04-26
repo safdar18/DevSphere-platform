@@ -22,3 +22,12 @@ app.get("/api/status", (req, res) => {
     status: "success"
   });
 });
+
+app.get("/api/health", (req, res) => {
+  res.json({
+    service: "DevSphere",
+    uptime: process.uptime(),
+    timestamp: new Date(),
+    status: "OK"
+  });
+});
